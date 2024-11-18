@@ -42,7 +42,7 @@ class CNVS_Page_Templates {
 
 		// Add your templates to this array.
 		$this->templates = array(
-			'template-canvas-fullwidth.php' => esc_html__( 'Canvas Full Width', 'canvas' ),
+			'template-canvas-fullwidth.php' => 'Canvas Full Width',
 		);
 	}
 

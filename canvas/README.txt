@@ -1,9 +1,9 @@
 === Canvas ===
 Tags: theme, page, template
 Requires at least: 4.0
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.4
-Stable tag: 2.4.5
+Stable tag: 2.4.6
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,6 +15,9 @@ A revolutionary block-based page builder used for building layouts, an interplay
 A revolutionary block-based page builder used for building layouts, an interplay of the WordPress block editor features and exceptional UI design.
 
 == Changelog ==
+
+= 2.4.6 =
+* Added compatibility with WordPress 6.7
 
 = 2.4.5 =
 * Added compatibility with WordPress 6.6

@@ -48,14 +48,13 @@ if ( ! class_exists( 'CNVS' ) ) {
 			}
 
 			// Get plugin data.
-			$plugin_data = get_plugin_data( CNVS_PATH . '/canvas.php' );
+			$plugin_data = get_plugin_data( CNVS_PATH . '/canvas.php', false, false );
 
 			// Vars.
 			$this->version = $plugin_data['Version'];
 
 			// Settings.
 			$this->settings = array(
-				'name'          => esc_html__( 'Canvas', 'canvas' ),
 				'version'       => $plugin_data['Version'],
 				'documentation' => $plugin_data['AuthorURI'] . '/documentation/canvas',
 			);

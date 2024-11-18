@@ -23,10 +23,6 @@ if ( ! class_exists( 'CNVS_Gutenberg_Utils_Is_Field_Visible' ) ) {
 		public static function check( $fieldData, $attributes, $allFields, $prepareAttrs = true ) {
 			$result = true;
 
-			// if ( $prepareAttrs ) {
-			// 	$attributes = apply_filters( 'canvas_block_prepare_server_render_attributes', $attributes, array( 'fields' => $allFields ) );
-			// }
-
 			if ( isset( $fieldData['active_callback'] ) ) {
 				$result = self::checkCondition( $fieldData['active_callback'], $attributes, 'AND' );
 			}
@@ -118,7 +114,7 @@ if ( ! class_exists( 'CNVS_Gutenberg_Utils_Is_Field_Visible' ) ) {
 					}
 
 					// Check count.
-					if ( isset( $data['count'] ) ) {
+					if ( isset( $data['count'] ) && is_string( $fieldVal ) ) {
 						$count    = explode( $data['count'], $fieldVal );
 						$fieldVal = count( $count ) - 1;
 					}

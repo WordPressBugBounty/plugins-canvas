@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/class-canvas-gutenberg.php:65, core/class-canvas.php:58
+#: core/class-canvas-gutenberg.php:65
 msgid "Canvas"
 msgstr ""
 
@@ -54,10 +54,6 @@ msgstr ""
 
 #: core/class-canvas-layouts.php:109
 msgid "User Layouts"
-msgstr ""
-
-#: core/class-canvas-page-templates.php:45
-msgid "Canvas Full Width"
 msgstr ""
 
 #: core/core-canvas-helpers.php:167
