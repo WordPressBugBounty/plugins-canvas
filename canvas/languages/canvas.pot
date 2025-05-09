@@ -1,4 +1,4 @@
-# Copyright (C) 2024 canvas
+# Copyright (C) 2025 canvas
 # This file is distributed under the same license as the canvas package.
 msgid ""
 msgstr ""

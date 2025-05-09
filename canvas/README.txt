@@ -1,9 +1,9 @@
 === Canvas ===
 Tags: theme, page, template
 Requires at least: 4.0
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.4
-Stable tag: 2.4.7
+Stable tag: 2.4.8
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,9 +12,28 @@ A revolutionary block-based page builder used for building layouts, an interplay
 
 == Description ==
 
-A revolutionary block-based page builder used for building layouts, an interplay of the WordPress block editor features and exceptional UI design.
+Canvas is a powerful, feature-rich block-based page builder that revolutionizes how you create content in WordPress. Built to seamlessly integrate with the WordPress block editor, Canvas enhances your creative workflow with an exceptional combination of advanced functionality and intuitive design.
+
+**Key Features:**
+
+* **Diverse Block Collection** - From basic elements to complex layouts, Canvas provides all the building blocks you need: Alert, Progress, Tabs, Collapsibles, Section Headings, and many more.
+* **Flexible Layout System** - Create responsive grid-based layouts with Row and Column blocks, complete with adjustable widths, gaps, and responsive controls.
+* **Rich Media Galleries** - Present your visual content beautifully with Justified Gallery and Slider Gallery blocks with extensive customization options.
+* **Advanced Posts Display** - Showcase your content in various layouts with powerful query controls including filtering by categories, tags, and post types.
+* **Responsive Design Controls** - Ensure your content looks great on all devices with device-specific visibility and styling options.
+* **Styling Flexibility** - Add sophisticated styling with controls for spacing, borders, colors, and more.
+* **Custom Block Extensions** - Extend core WordPress blocks with additional functionality and styling options.
+
+Canvas empowers both developers and content creators to build sophisticated, responsive layouts without writing code. Whether you're creating blog posts, landing pages, or complex website layouts, Canvas provides the tools you need for professional results with minimal effort.
+
+Designed with performance in mind, Canvas generates clean, optimized code that won't slow down your website, ensuring a smooth user experience for your visitors.
+
+Experience the perfect balance of power and simplicity with Canvas - where exceptional design meets unlimited creative freedom.
 
 == Changelog ==
+
+= 2.4.8 =
+* Added compatibility with WordPress 6.8
 
 = 2.4.7 =
 * Fixed Scheme Switcher
