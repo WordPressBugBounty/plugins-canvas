@@ -766,6 +766,10 @@ class CNVS_Block_Posts {
 			'paged'               => $paged,
 		);
 
+		if ( function_exists( 'pll_current_language' ) && pll_current_language() ) {
+			$args['lang'] = pll_current_language();
+		}
+
 		$args['posts_per_page'] = get_option( 'posts_per_page' );
 
 		// Filter by post type.

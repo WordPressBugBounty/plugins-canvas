@@ -3,7 +3,7 @@ Tags: theme, page, template
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 5.4
-Stable tag: 2.4.8
+Stable tag: 2.4.9
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,9 @@ Designed with performance in mind, Canvas generates clean, optimized code that w
 Experience the perfect balance of power and simplicity with Canvas - where exceptional design meets unlimited creative freedom.
 
 == Changelog ==
+
+= 2.4.9 =
+* Improved compatibility with Polylang
 
 = 2.4.8 =
 * Added compatibility with WordPress 6.8

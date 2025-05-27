@@ -655,7 +655,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: components/posts/class-block-posts.php:1080
+#: components/posts/class-block-posts.php:1084
 msgid "Block Posts"
 msgstr ""
 
