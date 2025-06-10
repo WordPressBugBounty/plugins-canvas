@@ -22,7 +22,7 @@ foreach ( $breakpoints as $name => $data ) {
 	 * Size.
 	 */
 	if ( isset( $attributes[ 'size' . $suffix ] ) ) {
-		$size = $attributes[ 'size' . $suffix ];
+		$size    = (float) $attributes[ 'size' . $suffix ];
 		$result .= '
 			.' . esc_attr( $class_name ) . ' {
 				-ms-flex-preferred-size: ' . esc_attr( 100 * $size / 12 ) . '%;
