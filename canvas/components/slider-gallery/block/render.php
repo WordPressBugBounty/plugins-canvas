@@ -31,7 +31,9 @@ echo '<div class="' . esc_attr( $attributes['className'] ) . '" ' . ( isset( $at
 				$link = get_the_permalink( $img );
 				break;
 			case 'file':
-				$link = wp_get_attachment_image_src( $img, 'full' )[0];
+				$image_src = wp_get_attachment_image_src( $img, 'full' );
+
+				$link = is_array( $image_src ) && isset( $image_src[0] ) ? $image_src[0] : false;
 				break;
 		}
 
