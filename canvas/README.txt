@@ -1,7 +1,7 @@
 === Canvas ===
 Tags: theme, page, template
 Requires at least: 4.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.4
 Stable tag: 2.5.1
 Contributors: codesupplyco
