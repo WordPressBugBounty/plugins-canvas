@@ -2,7 +2,7 @@
  * Internal dependencies
  */
 import isCoreBlockWithExt from '../../utils/is-core-block-with-ext';
-import dynamicStylesBYkey from '../../utils/dynamic-styles-by-key';
+
 import ComponentColors from '../../components/colors';
 import ComponentSpacings from '../../components/spacings';
 import ComponentRadius from '../../components/radius';
@@ -314,15 +314,11 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 				setAttributes,
 			} = this.props;
 
-			const {
-				canvasClassName,
-			} = attributes;
-
-			dynamicStylesBYkey( 'borders', canvasClassName, this.getCurrentBorderStyles() );
-
 			// add new borders controls.
+			const borderStyles = this.getCurrentBorderStyles();
 			return (
 				<Fragment>
+					{ borderStyles && <style>{ borderStyles }</style> }
 					<OriginalComponent
 						{ ...this.props }
 						{ ...this.state }

@@ -57,7 +57,7 @@ class CNVS_REST_Block_Renderer_Controller extends WP_REST_Controller {
 								/* translators: %s is the name of the block */
 								'description'          => sprintf( __( 'Attributes for %s block' ), $block_type->name ),
 								'type'                 => 'object',
-								'additionalProperties' => false,
+								'additionalProperties' => true,
 								'properties'           => $block_type->get_attributes(),
 								'default'              => array(),
 							),

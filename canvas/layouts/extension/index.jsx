@@ -216,6 +216,7 @@ const LayoutsBlockEditWithSelect = compose(
  * Register block.
  */
 registerBlockType('canvas/layouts', {
+	apiVersion: 3,
 	title: __('Canvas Layouts', 'canvas'),
 	description: __('Add a pre-configured layouts.', 'canvas'),
 	category: 'common',
@@ -226,7 +227,17 @@ registerBlockType('canvas/layouts', {
 		multiple: false,
 		reusable: false,
 	},
-	edit: LayoutsBlockEditWithSelect,
+	edit: function LayoutsEditWrapper( props ) {
+		const { useBlockProps } = wp.blockEditor;
+		const { Fragment } = wp.element;
+		const blockProps = useBlockProps( { style: { display: 'none' } } );
+		return (
+			<Fragment>
+				<div { ...blockProps } />
+				<LayoutsBlockEditWithSelect { ...props } />
+			</Fragment>
+		);
+	},
 	save: function () {
 		return null
 	}

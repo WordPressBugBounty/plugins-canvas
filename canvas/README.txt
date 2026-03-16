@@ -3,7 +3,7 @@ Tags: theme, page, template
 Requires at least: 4.0
 Tested up to: 6.9
 Requires PHP: 5.4
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,11 @@ Designed with performance in mind, Canvas generates clean, optimized code that w
 Experience the perfect balance of power and simplicity with Canvas - where exceptional design meets unlimited creative freedom.
 
 == Changelog ==
+
+= 2.5.2 =
+* Added compatibility with WordPress 6.9.
+* Migrated all custom blocks to Block API version 3 for iframe editor compatibility.
+* Replaced dynamic DOM style injection with inline React styles for iframe editor support.
 
 = 2.5.1 =
 * Improved compatibility with PHP 8.2.9

@@ -1,4 +1,4 @@
-# Copyright (C) 2025 canvas
+# Copyright (C) 2026 canvas
 # This file is distributed under the same license as the canvas package.
 msgid ""
 msgstr ""
@@ -675,7 +675,7 @@ msgstr ""
 msgid "Display Bullets"
 msgstr ""
 
-#: gutenberg/custom-blocks/index.php:813
+#: gutenberg/custom-blocks/index.php:814
 msgid "Block template is not available :("
 msgstr ""
 

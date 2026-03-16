@@ -2,7 +2,7 @@
  * Internal dependencies
  */
 import isCoreBlockWithExt from '../../utils/is-core-block-with-ext';
-import dynamicStylesBYkey from '../../utils/dynamic-styles-by-key';
+
 
 const {
 	canvasBreakpoints,
@@ -161,15 +161,11 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 				setAttributes,
 			} = this.props;
 
-			const {
-				canvasClassName,
-			} = attributes;
-
-			dynamicStylesBYkey( 'responsive', canvasClassName, this.getResponsiveStyles() );
-
 			// add new spacings controls.
+			const responsiveStyles = this.getResponsiveStyles();
 			return (
 				<Fragment>
+					{ responsiveStyles && <style>{ responsiveStyles }</style> }
 					<OriginalComponent
 						{ ...this.props }
 						{ ...this.state }

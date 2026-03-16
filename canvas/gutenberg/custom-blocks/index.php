@@ -575,6 +575,7 @@ if ( ! class_exists( 'CNVS_Gutenberg_Blocks_Registration' ) ) {
 				}
 
 				$block_data = array(
+					'api_version'     => 3,
 					'attributes'      => $attributes,
 					'editor_script'   => 'canvas-custom-blocks-editor-script',
 					'render_callback' => array( $this, 'render_custom_block' ),

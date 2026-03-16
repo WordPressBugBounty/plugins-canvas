@@ -35,6 +35,7 @@ const {
 
 const {
 	InspectorControls,
+	useBlockProps,
 } = wp.blockEditor;
 
 const {
@@ -326,15 +327,18 @@ function getBlockEdit(blockData) {
 
 			// layout selector.
 			if (isLayoutsAvailable && !layout) {
+				const blockProps = this.props.blockProps || { className: 'canvas-component-custom-blocks' };
 				return (
-					<Placeholder
-						className="canvas-component-custom-blocks-placeholder"
-						icon={icon}
-						label={title}
-						instructions={__('Select the block layout.')}
-					>
-						{this.getLayoutSelector()}
-					</Placeholder>
+					<div {...blockProps}>
+						<Placeholder
+							className="canvas-component-custom-blocks-placeholder"
+							icon={icon}
+							label={title}
+							instructions={__('Select the block layout.')}
+						>
+							{this.getLayoutSelector()}
+						</Placeholder>
+					</div>
 				);
 			}
 
@@ -349,8 +353,10 @@ function getBlockEdit(blockData) {
 				</Disabled>
 			), this.props);
 
+			const blockProps = this.props.blockProps || { className: 'canvas-component-custom-blocks' };
+
 			return (
-				<div className="canvas-component-custom-blocks">
+				<div {...blockProps}>
 					{this.isAllowed() ? (
 						blockRender
 					) : (
@@ -415,7 +421,7 @@ function getBlockEdit(blockData) {
 	 *   - section-sidebar    - block inserted in Section block inside Sidebar column
 	 *                        - block inserted in Row block inside column with size [1-4]
 	 */
-	return withSelect((select, ownProps) => {
+	const BlockEditWithSelect = withSelect((select, ownProps) => {
 		const {
 			getBlockHierarchyRootClientId,
 			getBlock,
@@ -469,6 +475,11 @@ function getBlockEdit(blockData) {
 			location,
 		};
 	})(CustomBlockEdit);
+
+	return function BlockEditWrapper(props) {
+		const blockProps = useBlockProps({ className: 'canvas-component-custom-blocks' });
+		return <BlockEditWithSelect {...props} blockProps={blockProps} />;
+	};
 }
 
 /**
@@ -487,6 +498,7 @@ jQuery(() => {
 
 			const resultBlockData = applyFilters( 'canvas.customBlock.registerData', {
 				...blockData,
+				apiVersion: 3,
 				supports,
 				icon: getBlockIcon(blockData),
 				edit: getBlockEdit(blockData),

@@ -2,7 +2,7 @@
  * Internal dependencies
  */
 import isCoreBlockWithExt from '../../utils/is-core-block-with-ext';
-import dynamicStylesBYkey from '../../utils/dynamic-styles-by-key';
+
 import ComponentSpacings from '../../components/spacings';
 import ComponentResponsiveWrapper from '../../components/responsive-wrapper';
 
@@ -219,15 +219,11 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 				setAttributes,
 			} = this.props;
 
-			const {
-				canvasClassName,
-			} = attributes;
-
-			dynamicStylesBYkey( 'spacings', canvasClassName, this.getCurrentSpacingStyles() );
-
 			// add new spacings controls.
+			const spacingStyles = this.getCurrentSpacingStyles();
 			return (
 				<Fragment>
+					{ spacingStyles && <style>{ spacingStyles }</style> }
 					<OriginalComponent
 						{ ...this.props }
 						{ ...this.state }

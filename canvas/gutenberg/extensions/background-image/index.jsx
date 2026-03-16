@@ -8,7 +8,7 @@ import './style.scss';
  * Internal dependencies
  */
 import isCoreBlockWithExt from '../../utils/is-core-block-with-ext';
-import dynamicStylesBYkey from '../../utils/dynamic-styles-by-key';
+
 import ComponentResponsiveWrapper from '../../components/responsive-wrapper';
 
 const {
@@ -286,14 +286,10 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 				setAttributes,
 			} = this.props;
 
-			const {
-				canvasClassName,
-			} = attributes;
-
-			dynamicStylesBYkey( 'background-image', canvasClassName, this.getCurrentBackgroundImageStyles() );
-
+			const bgImageStyles = this.getCurrentBackgroundImageStyles();
 			return (
 				<Fragment>
+					{ bgImageStyles && <style>{ bgImageStyles }</style> }
 					<OriginalComponent
 						{ ...this.props }
 						{ ...this.state }
