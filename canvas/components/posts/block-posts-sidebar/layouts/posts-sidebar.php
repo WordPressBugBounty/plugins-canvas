@@ -9,6 +9,10 @@
  * @subpackage PowerKit/templates
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 // when layout is not selected, used list.php
 // but we don't need to print any html in this situation.
 if ( ! isset( $attributes['layout'] ) || ! $attributes['layout'] ) {

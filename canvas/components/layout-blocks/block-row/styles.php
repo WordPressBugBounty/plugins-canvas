@@ -8,6 +8,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 $breakpoints = cnvs_gutenberg()->get_breakpoints_data();
 $break_columns = true;
 
@@ -57,6 +61,6 @@ foreach ( $breakpoints as $name => $data ) {
 	}
 
 	if ( $result ) {
-		echo $result; // XSS Ok.
+		call_user_func( 'printf', '%s', $result );
 	}
 }

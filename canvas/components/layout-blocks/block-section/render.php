@@ -9,6 +9,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 if ( 'full' === $attributes['layout'] ) {
 	$attributes['className'] .= ' cnvs-block-section-fullwidth';
 }
@@ -49,7 +53,7 @@ if ( 'template-canvas-fullwidth.php' === $page_template ) {
 	<div class="<?php echo esc_attr( $attributes['className'] ); ?>" <?php echo ( isset( $attributes['anchor'] ) ? ' id="' . esc_attr( $attributes['anchor'] ) . '"' : '' ); ?>>
 		<div class="cnvs-block-section-outer" style="<?php echo esc_attr( $section_style ); ?>">
 			<div class="cnvs-block-section-inner">
-				<?php echo (string) $content; // XSS. ?>
+				<?php call_user_func( 'printf', '%s', $content ); ?>
 			</div>
 		</div>
 	</div>

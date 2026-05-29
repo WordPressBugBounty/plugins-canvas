@@ -344,6 +344,7 @@ export default class ComponentFieldsRender extends Component {
 	renderControlNumber( fieldData, val, onChange ) {
 		return (
 			<RangeControl
+				__next40pxDefaultSize
 				label={ fieldData.label || false }
 				help={ fieldData.help || false }
 				min={ fieldData.min || false }
@@ -405,6 +406,8 @@ export default class ComponentFieldsRender extends Component {
 
 		return (
 			<SelectControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
 				label={ fieldData.label || false }
 				help={ fieldData.help || false }
 				multiple={ fieldData.multiple || false }

@@ -158,6 +158,8 @@ export default class ComponentQueryControl extends Component {
 					} }
 				/>
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ __( 'Order by' ) }
 					value={ orderby }
 					options={ [
@@ -213,6 +215,8 @@ export default class ComponentQueryControl extends Component {
 					/>
 				) : '' }
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ __( 'Order' ) }
 					value={ order }
 					options={ [

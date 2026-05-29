@@ -356,6 +356,8 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 								} }
 							</ComponentResponsiveWrapper>
 							<SelectControl
+								__next40pxDefaultSize
+								__nextHasNoMarginBottom
 								label={ __( 'Border' ) }
 								value={ attributes.borderStyle }
 								options={ [

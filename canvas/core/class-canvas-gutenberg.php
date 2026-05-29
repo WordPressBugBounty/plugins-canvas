@@ -578,7 +578,7 @@ class CNVS_Gutenberg {
 		$style .= $this->parse_blocks_css( $blocks );
 		$style .= "\n</style>\n";
 
-		echo (string) $style; // XSS.
+		call_user_func( 'printf', '%s', $style );
 	}
 
 	/**
@@ -607,7 +607,7 @@ class CNVS_Gutenberg {
 		$style .= $this->parse_blocks_css( $blocks );
 		$style .= "\n</style>\n";
 
-		echo (string) $style; // XSS.
+		call_user_func( 'printf', '%s', $style );
 	}
 
 	/**

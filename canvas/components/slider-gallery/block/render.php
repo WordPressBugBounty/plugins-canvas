@@ -5,6 +5,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 $images = (array) ( isset( $attributes['images'] ) ? $attributes['images'] : array() );
 
 if ( empty( $images ) ) {

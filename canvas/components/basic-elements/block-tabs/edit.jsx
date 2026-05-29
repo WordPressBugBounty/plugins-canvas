@@ -95,6 +95,7 @@ export default class TabsBlockEdit extends Component {
 				<InspectorControls>
 					<PanelBody>
 						<RangeControl
+							__next40pxDefaultSize
 							label={ __( 'Tabs' ) }
 							value={ tabsData.length }
 							min={ 1 }

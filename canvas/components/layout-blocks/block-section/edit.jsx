@@ -278,6 +278,7 @@ export default class SectionBlockEdit extends Component {
 						{ ( ! canvasBSLocalize.disableSectionResponsive ) && ( ( 'full' === layout && ! layoutAlign ) || ( 'full' !== layout ) ) ? (
 						<Fragment>
 							<RangeControl
+								__next40pxDefaultSize
 								label={ __( 'Content Width (px.)' ) }
 								value={ contentWidth || canvasBSLocalize.sectionResponsiveMaxWidth }
 								min={ 320 }
@@ -302,6 +303,8 @@ export default class SectionBlockEdit extends Component {
 								/>
 								{ sidebarSticky ? (
 									<SelectControl
+										__next40pxDefaultSize
+										__nextHasNoMarginBottom
 										label={ __( 'Sticky Method' ) }
 										value={ sidebarStickyMethod }
 										onChange={ ( val ) => { setAttributes( { sidebarStickyMethod: val } ) } }

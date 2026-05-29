@@ -5,6 +5,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * This function will return true for a non empty array
  *

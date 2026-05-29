@@ -1,9 +1,9 @@
 === Canvas ===
 Tags: theme, page, template
 Requires at least: 4.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.4
-Stable tag: 2.5.2
+Stable tag: 2.5.3
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,12 @@ Designed with performance in mind, Canvas generates clean, optimized code that w
 Experience the perfect balance of power and simplicity with Canvas - where exceptional design meets unlimited creative freedom.
 
 == Changelog ==
+
+= 2.5.3 =
+* Security: Fixed an authenticated (Contributor+) stored XSS in the Section Heading block via the "tag" block attribute (CVE-2026-9629). Tag names are now validated against an allowlist (h1–h6, div, p) and heading text is sanitized.
+* Security: Hardened output escaping across blocks, including tab and collapsible titles and the Posts block title tag.
+* Compatibility: Tested up to WordPress 7.0.
+* Maintenance: Resolved WordPress Plugin Check issues — added direct file access protection, translation text domains, and output-escaping improvements throughout the plugin.
 
 = 2.5.2 =
 * Added compatibility with WordPress 6.9.

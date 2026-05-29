@@ -5,6 +5,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 if ( ! class_exists( 'CNVS_Gutenberg_Blocks_Registration' ) ) {
 	class CNVS_Gutenberg_Blocks_Registration {
 		/**

@@ -102,6 +102,7 @@ export default class ComponentRadius extends Component {
 								value={ val }
 								onChange={ ( val ) => this.updateRadius( radius, prefix, suffix, val ) }
 								autoComplete="off"
+								__next40pxDefaultSize
 							/>
 						);
 					} ) }

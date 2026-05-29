@@ -5,6 +5,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Controller which provides REST endpoint for rendering a block.
  *
@@ -43,7 +47,7 @@ class CNVS_REST_Block_Renderer_Controller extends WP_REST_Controller {
 				array(
 					'args'   => array(
 						'name' => array(
-							'description' => __( 'Unique registered name for the block.' ),
+							'description' => __( 'Unique registered name for the block.', 'canvas' ),
 							'type'        => 'string',
 						),
 					),
@@ -55,14 +59,14 @@ class CNVS_REST_Block_Renderer_Controller extends WP_REST_Controller {
 							'context'    => $this->get_context_param( array( 'default' => 'view' ) ),
 							'attributes' => array(
 								/* translators: %s is the name of the block */
-								'description'          => sprintf( __( 'Attributes for %s block' ), $block_type->name ),
+								'description'          => sprintf( __( 'Attributes for %s block', 'canvas' ), $block_type->name ),
 								'type'                 => 'object',
 								'additionalProperties' => true,
 								'properties'           => $block_type->get_attributes(),
 								'default'              => array(),
 							),
 							'post_id'    => array(
-								'description' => __( 'ID of the post context.' ),
+								'description' => __( 'ID of the post context.', 'canvas' ),
 								'type'        => 'integer',
 							),
 						),
@@ -92,7 +96,7 @@ class CNVS_REST_Block_Renderer_Controller extends WP_REST_Controller {
 			if ( ! $post || ! current_user_can( 'edit_post', $post->ID ) ) {
 				return new WP_Error(
 					'block_cannot_read',
-					__( 'Sorry, you are not allowed to read blocks of this post.' ),
+					__( 'Sorry, you are not allowed to read blocks of this post.', 'canvas' ),
 					array(
 						'status' => rest_authorization_required_code(),
 					)
@@ -102,7 +106,7 @@ class CNVS_REST_Block_Renderer_Controller extends WP_REST_Controller {
 			if ( ! current_user_can( 'edit_posts' ) ) {
 				return new WP_Error(
 					'block_cannot_read',
-					__( 'Sorry, you are not allowed to read blocks as this user.' ),
+					__( 'Sorry, you are not allowed to read blocks as this user.', 'canvas' ),
 					array(
 						'status' => rest_authorization_required_code(),
 					)
@@ -138,7 +142,7 @@ class CNVS_REST_Block_Renderer_Controller extends WP_REST_Controller {
 		if ( null === $block ) {
 			return new WP_Error(
 				'block_invalid',
-				__( 'Invalid block.' ),
+				__( 'Invalid block.', 'canvas' ),
 				array(
 					'status' => 404,
 				)
@@ -165,7 +169,7 @@ class CNVS_REST_Block_Renderer_Controller extends WP_REST_Controller {
 			'type'       => 'object',
 			'properties' => array(
 				'rendered' => array(
-					'description' => __( 'The rendered block.' ),
+					'description' => __( 'The rendered block.', 'canvas' ),
 					'type'        => 'string',
 					'required'    => true,
 					'context'     => array( 'edit' ),

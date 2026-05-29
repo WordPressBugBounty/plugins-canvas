@@ -5,6 +5,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Initialize Row block.
  */
@@ -202,7 +206,7 @@ class CNVS_Block_Row {
 				array(
 					'key'     => 'textColor',
 					'label'   => esc_html__( 'Text Color', 'canvas' ),
-					'section' => esc_html__( 'Color Settings' ),
+					'section' => esc_html__( 'Color Settings', 'canvas' ),
 					'type'    => 'color',
 					'default' => '',
 					'output'  => array(
@@ -216,7 +220,7 @@ class CNVS_Block_Row {
 				array(
 					'key'     => 'backgroundColor',
 					'label'   => esc_html__( 'Background Color', 'canvas' ),
-					'section' => esc_html__( 'Color Settings' ),
+					'section' => esc_html__( 'Color Settings', 'canvas' ),
 					'type'    => 'color',
 					'default' => '',
 					'output'  => array(

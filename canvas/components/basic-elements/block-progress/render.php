@@ -8,6 +8,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 if ( $attributes['striped'] ) {
 	$attributes['className'] .= ' cnvs-block-progress-striped';
 

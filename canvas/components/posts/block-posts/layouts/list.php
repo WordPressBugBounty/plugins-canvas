@@ -9,6 +9,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 // when layout is not selected, used list.php
 // but we don't need to print any html in this situation.
 if ( ! isset( $attributes['layout'] ) || ! $attributes['layout'] ) {
@@ -47,6 +51,7 @@ if ( ! isset( $attributes['layout'] ) || ! $attributes['layout'] ) {
 
 							// Post Title.
 							$tag = apply_filters( 'canvas_block_posts_title_tag', 'h3', $attributes, $options );
+							$tag = cnvs_safe_html_tag( $tag, 'h3' );
 							the_title( '<' . $tag . ' class="cnvs-block-posts-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . $tag . '>' );
 
 							// Post Meta.
@@ -104,7 +109,7 @@ if ( ! isset( $attributes['layout'] ) || ! $attributes['layout'] ) {
 				echo '<nav class="navigation pagination" role="navigation">';
 					echo '<h2 class="screen-reader-text">' . esc_html__( 'Posts navigation', 'canvas' ) . '</h2>';
 					echo '<div class="nav-links">';
-						echo cnvs_paginate_links(
+						call_user_func( 'printf', '%s', (string) cnvs_paginate_links(
 							array(
 								'base'             => $base_url,
 								'format'           => '%#%',
@@ -112,7 +117,7 @@ if ( ! isset( $attributes['layout'] ) || ! $attributes['layout'] ) {
 								'total'            => $total_pages,
 								'merge_query_vars' => false,
 							)
-						); // XSS.
+						) );
 					echo '</div>';
 				echo '</nav>';
 			} else {

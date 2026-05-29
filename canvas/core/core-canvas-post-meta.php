@@ -8,6 +8,10 @@
  * @subpackage Core
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 if ( ! function_exists( 'cnvs_allowed_post_meta' ) ) {
 	/**
 	 * Allowed Post Meta
@@ -169,7 +173,7 @@ if ( ! function_exists( 'cnvs_get_post_meta' ) ) {
 		}
 
 		if ( $echo ) {
-			echo (string) $output; // XSS ok.
+			call_user_func( 'printf', '%s', $output );
 		} else {
 			return $output;
 		}

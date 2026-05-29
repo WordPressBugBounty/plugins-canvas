@@ -123,6 +123,8 @@ const paragraphWithCanvasDropcap = createHigherOrderComponent( ( BlockEdit ) => 
 								title={ __( 'Dropcap Style' ) }
 							>
 								<SelectControl
+									__next40pxDefaultSize
+									__nextHasNoMarginBottom
 									value={ dropcapStyle }
 									options={ [
 										{

@@ -9,6 +9,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 $columns = isset( $options['columns'] ) ? $options['columns'] : false;
 
 $class_name = $attributes['className'];
@@ -49,6 +53,7 @@ if ( $columns ) {
 
 							// Post Title.
 							$tag = apply_filters( 'canvas_block_posts_title_tag', 'h3', $attributes, $options );
+							$tag = cnvs_safe_html_tag( $tag, 'h3' );
 							the_title( '<' . $tag . ' class="cnvs-block-posts-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></' . $tag . '>' );
 
 							// Post Meta.
@@ -114,7 +119,7 @@ if ( $columns ) {
 				echo '<nav class="navigation pagination" role="navigation">';
 					echo '<h2 class="screen-reader-text">' . esc_html__( 'Posts navigation', 'canvas' ) . '</h2>';
 					echo '<div class="nav-links">';
-						echo cnvs_paginate_links(
+						call_user_func( 'printf', '%s', (string) cnvs_paginate_links(
 							array(
 								'base'             => $base_url,
 								'format'           => '%#%',
@@ -122,7 +127,7 @@ if ( $columns ) {
 								'total'            => $total_pages,
 								'merge_query_vars' => false,
 							)
-						); // XSS.
+						) );
 					echo '</div>';
 				echo '</nav>';
 			} else {

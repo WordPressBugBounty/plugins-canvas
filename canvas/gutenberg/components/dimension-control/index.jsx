@@ -74,6 +74,7 @@ export default class ComponentDimensionControl extends Component {
                     help={ help }
                     value={ value }
                     onChange={ onChange }
+                    __next40pxDefaultSize
                 />
                 { ! this.isValidValue( value ) ? (
                     <Notice status="warning" isDismissible={ false }>

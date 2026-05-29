@@ -62,6 +62,8 @@ export default class WidgetizedAreaBlockEdit extends Component {
 				<InspectorControls>
 					<PanelBody>
 						<SelectControl
+							__next40pxDefaultSize
+							__nextHasNoMarginBottom
 							label={ __( 'Widgetized Area' ) }
 							value={ area }
 							options={ options }
@@ -71,6 +73,8 @@ export default class WidgetizedAreaBlockEdit extends Component {
 				</InspectorControls>
 				<Placeholder>
 					<SelectControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
 						label={ __( 'Widgetized Area' ) }
 						value={ area }
 						options={ options }

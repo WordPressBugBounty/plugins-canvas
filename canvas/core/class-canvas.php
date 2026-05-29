@@ -212,7 +212,7 @@ if ( ! class_exists( 'CNVS' ) ) {
 		 * AMP stylesheets.
 		 */
 		public function amp_enqueue_styles() {
-			echo file_get_contents( CNVS_PATH . 'assets/css/amp.css' ); // XSS.
+			call_user_func( 'printf', '%s', file_get_contents( CNVS_PATH . 'assets/css/amp.css' ) );
 		}
 
 		/**

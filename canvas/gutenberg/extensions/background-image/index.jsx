@@ -401,6 +401,8 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 													</h2>
 
 													<SelectControl
+														__next40pxDefaultSize
+														__nextHasNoMarginBottom
 														label={ false }
 														help={ false }
 														multiple={ false }
@@ -460,6 +462,7 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 														</h2>
 
 														<RangeControl
+															__next40pxDefaultSize
 															label={ false }
 															help={ false }
 															min={ -2000 }
@@ -510,6 +513,7 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 														</h2>
 
 														<RangeControl
+															__next40pxDefaultSize
 															label={ false }
 															help={ false }
 															min={ -2000 }
@@ -539,6 +543,8 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 													</h2>
 
 													<SelectControl
+														__next40pxDefaultSize
+														__nextHasNoMarginBottom
 														label={ false }
 														help={ false }
 														multiple={ false }
@@ -570,6 +576,8 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 													</h2>
 
 													<SelectControl
+														__next40pxDefaultSize
+														__nextHasNoMarginBottom
 														label={ false }
 														help={ false }
 														multiple={ false }
@@ -603,6 +611,8 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 													</h2>
 
 													<SelectControl
+														__next40pxDefaultSize
+														__nextHasNoMarginBottom
 														label={ false }
 														help={ false }
 														multiple={ false }
@@ -657,6 +667,7 @@ const withInspectorControl = createHigherOrderComponent( ( OriginalComponent ) =
 														</h2>
 
 														<RangeControl
+															__next40pxDefaultSize
 															label={ false }
 															help={ false }
 															min={ 0 }

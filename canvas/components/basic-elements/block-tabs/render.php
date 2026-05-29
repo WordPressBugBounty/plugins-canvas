@@ -9,6 +9,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 $tabs_data = is_array( $attributes['tabsData'] ) ? $attributes['tabsData'] : array();
 
 if ( $tabs_data && count( $tabs_data ) ) {
@@ -33,13 +37,13 @@ if ( 'vertical' === $attributes['tabsPosition'] ) {
 
 			?>
 			<div class="<?php echo esc_attr( $tab_class ); ?>">
-				<a href="#"><?php echo (string) $title; // XSS. ?></a>
+				<a href="#"><?php echo wp_kses_post( $title ); ?></a>
 			</div>
 			<?php
 		}
 		?>
 	</div>
 	<div class="cnvs-block-tabs-content">
-		<?php echo (string) $content; // XSS. ?>
+		<?php call_user_func( 'printf', '%s', $content ); ?>
 	</div>
 </div>

@@ -147,6 +147,8 @@ class LayoutsBlockEdit extends Component {
 					{categories.length > 1 ? (
 						<div className="cnvs-extension-layouts-categories">
 							<SelectControl
+								__next40pxDefaultSize
+								__nextHasNoMarginBottom
 								options={categories}
 								onChange={(val) => {
 									this.setState({

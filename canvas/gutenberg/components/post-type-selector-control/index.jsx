@@ -36,6 +36,8 @@ class ComponentPostTypeSelectorControl extends Component {
 
 		return (
             <SelectControl
+                __next40pxDefaultSize
+                __nextHasNoMarginBottom
                 label={ label }
                 help={ help }
                 value={ value }

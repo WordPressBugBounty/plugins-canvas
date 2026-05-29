@@ -5,6 +5,10 @@
  * @package Canvas
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Processing path of style.
  *
@@ -24,6 +28,31 @@ function cnvs_style( $path ) {
 	}
 
 	return $path;
+}
+
+
+if ( ! function_exists( 'cnvs_safe_html_tag' ) ) {
+	/**
+	 * Validate an HTML tag name against an allowlist.
+	 *
+	 * Block attributes live inside the block delimiter JSON and are NOT
+	 * KSES-filtered the way post body HTML is, so a tag name coming from a
+	 * block attribute must be validated before it is printed as an element.
+	 *
+	 * @param string $tag      Tag name to validate.
+	 * @param string $fallback Tag returned when $tag is not allowed.
+	 * @param array  $allowed  Allowed tag names. Defaults to headings, div, p.
+	 * @return string Safe, lowercase tag name.
+	 */
+	function cnvs_safe_html_tag( $tag, $fallback = 'h2', $allowed = array() ) {
+		if ( empty( $allowed ) ) {
+			$allowed = array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'p' );
+		}
+
+		$tag = is_string( $tag ) ? strtolower( trim( $tag ) ) : '';
+
+		return in_array( $tag, $allowed, true ) ? $tag : $fallback;
+	}
 }
 
 

@@ -6,6 +6,10 @@
  * @subpackage Modules
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Related Posts Class
  */

@@ -110,6 +110,8 @@ const coverWithCanvasVertical = createHigherOrderComponent( ( BlockEdit ) => {
 							title={ __( 'Vertical Align' ) }
 						>
 							<SelectControl
+								__next40pxDefaultSize
+								__nextHasNoMarginBottom
 								value={ verticalAlign }
 								options={ [
 									{

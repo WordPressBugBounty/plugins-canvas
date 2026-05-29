@@ -103,6 +103,7 @@ export default class ComponentSpacings extends Component {
 								value={ val }
 								onChange={ ( val ) => this.updateSpacing( spacing, prefix, suffix, val ) }
 								autoComplete="off"
+								__next40pxDefaultSize
 							/>
 						);
 					} ) }
