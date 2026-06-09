@@ -10,6 +10,7 @@ const {
  */
 import TabBlockEdit from './edit.jsx';
 import TabBlockSave from './save.jsx';
+import tabDeprecated from './deprecated.jsx';
 
 /**
  * Custom block Edit output for Tab block.
@@ -39,6 +40,7 @@ function editRender( edit, blockProps ) {
 function registerData( blockData ) {
 	if ( 'canvas/tab' === blockData.name ) {
 		blockData.save = TabBlockSave;
+		blockData.deprecated = tabDeprecated;
 	}
 
 	return blockData;

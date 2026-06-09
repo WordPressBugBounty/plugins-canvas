@@ -265,7 +265,7 @@ if ( ! class_exists( 'CNVS' ) ) {
 		 */
 		public function wp_head() {
 			?>
-			<link rel="preload" href="<?php echo esc_url( CNVS_URL . 'assets/fonts/canvas-icons.woff' ); ?>" as="font" type="font/woff" crossorigin>
+			<link rel="preload" href="<?php echo esc_url( CNVS_URL . 'assets/fonts/canvas-icons.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 			<?php
 		}
 

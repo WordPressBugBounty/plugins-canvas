@@ -3,7 +3,7 @@ Tags: theme, page, template
 Requires at least: 4.0
 Tested up to: 7.0
 Requires PHP: 5.4
-Stable tag: 2.5.3
+Stable tag: 2.5.4
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,10 @@ Designed with performance in mind, Canvas generates clean, optimized code that w
 Experience the perfect balance of power and simplicity with Canvas - where exceptional design meets unlimited creative freedom.
 
 == Changelog ==
+
+= 2.5.4 =
+* Fix: Tab blocks created with older versions of the plugin no longer show as invalid in the editor. Added a block deprecation to handle the previous save output that included the wp-block-canvas-tab class.
+* Updated icon font for improved compatibility
 
 = 2.5.3 =
 * Security: Fixed an authenticated (Contributor+) stored XSS in the Section Heading block via the "tag" block attribute (CVE-2026-9629). Tag names are now validated against an allowlist (h1–h6, div, p) and heading text is sanitized.
