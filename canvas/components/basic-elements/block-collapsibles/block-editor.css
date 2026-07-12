@@ -8,11 +8,8 @@
 }
 
 /*--------------------------------------------------------------*/
-.cnvs-block-collapsibles > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="canvas/collapsible"] + [data-type="canvas/collapsible"] > .canvas-component-custom-blocks {
+.cnvs-block-collapsibles > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="canvas/collapsible"] + [data-type="canvas/collapsible"] > .cnvs-block-collapsible {
 	margin-top: -33px;
-}
-
-.cnvs-block-collapsibles > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="canvas/collapsible"] + [data-type="canvas/collapsible"] > .canvas-component-custom-blocks .cnvs-block-collapsible {
 	border-top: var(--cnvs-collapsible-border-top);
 }
 

@@ -82,6 +82,9 @@ export default class TabsBlockEdit extends Component {
 			canvasClassName,
 		} = this.props.attributes;
 
+		// tabActive may point past the last tab after the tabs count is reduced.
+		const activeTab = Math.min( tabActive, tabsData.length - 1 );
+
 		className = classnames(
 			'cnvs-block-tabs',
 			`cnvs-block-tabs-${ tabsData.length }`,
@@ -96,7 +99,8 @@ export default class TabsBlockEdit extends Component {
 					<PanelBody>
 						<RangeControl
 							__next40pxDefaultSize
-							label={ __( 'Tabs' ) }
+							__nextHasNoMarginBottom
+							label={ __( 'Tabs', 'canvas' ) }
 							value={ tabsData.length }
 							min={ 1 }
 							max={ 20 }
@@ -111,7 +115,10 @@ export default class TabsBlockEdit extends Component {
 									}
 								}
 
-								setAttributes( { tabsData: newTabsData } );
+								setAttributes( {
+									tabsData: newTabsData,
+									tabActive: Math.min( tabActive, val - 1 ),
+								} );
 							} }
 						/>
 					</PanelBody>
@@ -120,7 +127,7 @@ export default class TabsBlockEdit extends Component {
 					<div className="cnvs-block-tabs-buttons">
 						{
 							tabsData.map( ( title, i ) => {
-								const selected = tabActive === i;
+								const selected = activeTab === i;
 
 								return (
 									<div
@@ -137,23 +144,21 @@ export default class TabsBlockEdit extends Component {
 									>
 										<RichText
 											tagName="span"
-											placeholder={ __( 'Tab label' ) }
+											placeholder={ __( 'Tab label', 'canvas' ) }
+											value={ title }
 											onChange={ ( value ) => {
-												if ( tabsData[ i ] ) {
-													const newTabsData = tabsData.map( ( oldTabData, newIndex ) => {
-														if ( i === newIndex ) {
-															return value;
-														}
+												const newTabsData = tabsData.map( ( oldTabData, newIndex ) => {
+													if ( i === newIndex ) {
+														return value;
+													}
 
-														return oldTabData;
-													} );
+													return oldTabData;
+												} );
 
-													setAttributes( {
-														tabsData: newTabsData,
-													} );
-												}
+												setAttributes( {
+													tabsData: newTabsData,
+												} );
 											} }
-											keepPlaceholderOnFocus
 										/>
 									</div>
 								);
@@ -167,15 +172,15 @@ export default class TabsBlockEdit extends Component {
 								templateLock="all"
 								allowedBlocks={ [ 'canvas/tab' ] }
 							/>
-						) : __( 'Tab content' ) }
+						) : __( 'Tab content', 'canvas' ) }
 					</div>
 				</div>
 				<style>
 					{ `
-						[data-block="${ this.props.clientId }"] > .canvas-component-custom-blocks > .cnvs-block-tabs > .cnvs-block-tabs-content > .block-editor-inner-blocks > .block-editor-block-list__layout > div {
+						[data-block="${ this.props.clientId }"] > .cnvs-block-tabs > .cnvs-block-tabs-content > .block-editor-inner-blocks > .block-editor-block-list__layout > div {
 							display: none;
 						}
-						[data-block="${ this.props.clientId }"] > .canvas-component-custom-blocks > .cnvs-block-tabs > .cnvs-block-tabs-content > .block-editor-inner-blocks > .block-editor-block-list__layout > :nth-child(${ tabActive + 1 }) {
+						[data-block="${ this.props.clientId }"] > .cnvs-block-tabs > .cnvs-block-tabs-content > .block-editor-inner-blocks > .block-editor-block-list__layout > :nth-child(${ activeTab + 1 }) {
 							display: block;
 						}
 					` }

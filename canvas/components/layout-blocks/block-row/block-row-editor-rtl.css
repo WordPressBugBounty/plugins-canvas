@@ -93,7 +93,7 @@
 	bottom: 0;
 }
 
-[data-type="canvas/column"]:hover > .canvas-component-custom-blocks > .cnvs-block-column-resizer {
+[data-type="canvas/column"]:hover > .cnvs-block-column-resizer {
 	opacity: 1;
 }
 

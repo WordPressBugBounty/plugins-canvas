@@ -1,9 +1,9 @@
 === Canvas ===
 Tags: theme, page, template
-Requires at least: 4.0
+Requires at least: 5.6
 Tested up to: 7.0
 Requires PHP: 5.4
-Stable tag: 2.5.4
+Stable tag: 2.5.5
 Contributors: codesupplyco
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,15 @@ Designed with performance in mind, Canvas generates clean, optimized code that w
 Experience the perfect balance of power and simplicity with Canvas - where exceptional design meets unlimited creative freedom.
 
 == Changelog ==
+
+= 2.5.5 =
+* Fix: Tab blocks now correctly display one tab at a time in the editor instead of stacking all tab contents vertically.
+* Fix: Tab labels are now shown in the editor after reloading a post and can be cleared and renamed freely.
+* Fix: Reducing the number of tabs no longer hides all tab content when the active tab was removed.
+* Fix: The column resize handle appears again when hovering a column in the editor, and is correctly positioned when a custom gap is set.
+* Fix: Collapsible items no longer show extra vertical spacing and missing separators in the editor.
+* Maintenance: Added missing translation text domains in the Tabs block editor and removed deprecated editor component props.
+* Maintenance: Updated the "Requires at least" value to WordPress 5.6 to reflect the actual block editor requirements.
 
 = 2.5.4 =
 * Fix: Tab blocks created with older versions of the plugin no longer show as invalid in the editor. Added a block deprecation to handle the previous save output that included the wp-block-canvas-tab class.

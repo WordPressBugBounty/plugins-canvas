@@ -53,7 +53,7 @@ export default function( attributes, className ) {
 					padding-left: ${ gap / 2 }px;
 					padding-right: ${ gap / 2 }px;
 				}
-				.${ className } > .cnvs-block-row-inner > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="canvas/column"] > .canvas-component-custom-blocks > .cnvs-block-column-resizer {
+				.${ className } > .cnvs-block-row-inner > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="canvas/column"] > .cnvs-block-column-resizer {
 					margin-right: ${ - gap / 2 }px;
 				}
 			`;
